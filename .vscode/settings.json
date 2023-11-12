@@ -2,5 +2,6 @@
 	"editor.insertSpaces": true,
     "editor.codeActionsOnSave": {
         "source.fixAll": true,
-    }
+    },
+    "eslint.codeActionsOnSave.mode": "all",
 }

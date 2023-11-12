@@ -1,32 +1,40 @@
 {
 	"name": "fastify-app-template",
 	"version": "1.0.0",
-	"description": "",
+	"description": "A fastify api server template with typescript and some infrastructures.",
 	"main": "index.js",
-	"scripts": {
-		"dev": "ts-node src/index.ts",
-		"lint": "eslint . --fix",
-		"build": "tsc -p tsconfig.json",
-		"start": "node dist/index.js"
-	},
 	"keywords": [],
-	"author": "",
+	"author": "gk.wang",
 	"license": "ISC",
 	"engines": {
 		"node": ">=18.0.0",
 		"pnpm": ">=8.0.0"
 	},
+	"scripts": {
+		"dev": "NODE_ENV=development tsx watch ./src/index.ts",
+		"lint": "eslint . --fix",
+		"build": "tsc -p tsconfig.json",
+		"start": "NODE_ENV=production node -r dotenv/config dist/index.js"
+	},
 	"dependencies": {
 		"@fastify/cors": "^8.4.1",
-		"fastify": "^4.24.3"
+		"@fastify/helmet": "^11.1.1",
+		"config": "^3.3.9",
+		"dotenv": "^16.3.1",
+		"fastify": "^4.24.3",
+		"fluent-json-schema": "^4.2.1",
+		"pino": "^8.16.1",
+		"pino-pretty": "^10.2.3"
 	},
 	"devDependencies": {
+		"@types/config": "^3.3.3",
 		"@types/node": "^20.9.0",
 		"@typescript-eslint/eslint-plugin": "^6.10.0",
 		"@typescript-eslint/parser": "^6.10.0",
 		"eslint": "^8.53.0",
+		"eslint-config-airbnb": "^19.0.4",
 		"fastify-tsconfig": "^2.0.0",
-		"ts-node": "^10.9.1",
+		"tsx": "^4.1.1",
 		"typescript": "^5.2.2"
 	}
 }
